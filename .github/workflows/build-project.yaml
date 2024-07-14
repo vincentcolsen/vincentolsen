@@ -8,6 +8,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  # Allows to run workflow manually from Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -37,8 +42,38 @@ jobs:
     #- name: Test project
     #  run: npm test
 
-    - name: Deploy to Github Pages
-      uses:  peaceiris/actions-gh-pages@v3
+    - name: Upload build artifacts
+      if: success()
+      uses: actions/upload-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        name: build-artifacts
+        path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+      #- name: Deploy to Github Pages
+      #uses:  peaceiris/actions-gh-pages@v3
+      #with:
+      #  github_token: ${{ secrets.GITHUB_TOKEN }}
+      #  publish_dir: ./dist
