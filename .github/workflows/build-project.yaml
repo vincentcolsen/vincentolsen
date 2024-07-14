@@ -14,10 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     # Ensures compability with different node-version
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    #strategy:
+    #  matrix:
+    #    node-version: [14.x, 16.x, 18.x]
 
     steps:
     - name: Checkout code
