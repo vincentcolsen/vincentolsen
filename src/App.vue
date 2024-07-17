@@ -25,8 +25,11 @@
           <p>Outsourced to Oslo municipality as DevSecOps.</p>
           <ul class="technologies">
             <li>Kubernetes</li>
+            <li>•</li>
             <li>Terraform</li>
+            <li>•</li>
             <li>Ansible</li>
+            <li>•</li>
             <li>Kafka</li>
           </ul>
         </div>
@@ -39,7 +42,8 @@
           <h3>Summer Intern – Orkla</h3>
           <p>Big Data & Analytics. Worked on analyzing a lot of data through Gradient Boosting to see what drove the sale of Orkla Health and Care. We used serverless SQL in Azure to create a connection between all the data points, and python to transform the data.</p>
           <ul class="technologies">
-            <li>Azure</li>
+            <li>Azure </li>
+            <li>•</li>
             <li>Python</li>
           </ul>
         </div>
@@ -105,7 +109,7 @@ h3 {
 
 p {
   font-style: normal;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: lighter;
   line-height: 21px;
 }
@@ -120,7 +124,7 @@ p {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  margin-right: 20px;
+  margin-right: 48px;
 }
 
 .profile-header-text {
@@ -171,9 +175,13 @@ p {
 }
 
 .technologies li {
-  background-color: #333;
-  padding: 5px 10px;
-  border-radius: 5px;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-style: normal;
+  font-size: 15px;
+  font-weight: lighter;
+  line-height: 21px;
 }
 
 .spacer {
