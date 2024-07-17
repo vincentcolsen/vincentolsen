@@ -1,15 +1,19 @@
 <template>
   <!--<HelloWorld msg="Vincent sier; hello world"/>-->
   <div id="app" class="container">
-    <header>
+    <header></header>
+    <div class="profile-header">
       <img src="./assets/vinco_3000px.jpg" alt="Bilde av Vincent Olsen" class="avatar">
-      <h1>Vincent C. Olsen</h1>
-      <p class="subtitle">IT Developer</p>
-    </header>
+      <div class="profile-header-text">
+        <h1>Vincent C. Olsen</h1>
+        <p class="subtitle">IT Developer</p>
+      </div>
+    </div>
     <section class="about">
-      <h3>About</h3>
-      <p>As an IT consultant at Netcompany, I work with modern technologies like Kubernetes, Terraform, Ansible, Python, among others. In my current project, I hold the position of security officer, responsible for securing systems, in addition to actively working with DevOps. My background in IT provides me with a solid foundation to tackle various challenges in my work.</p>
+      <h2 class="about">About</h2>
+      <p class="about">As an IT consultant at Netcompany, I work with modern technologies like Kubernetes, Terraform, Ansible, Python, among others. In my current project, I hold the position of security officer, responsible for securing systems, in addition to actively working with DevOps. My background in IT provides me with a solid foundation to tackle various challenges in my work.</p>
     </section>
+    <div class="spacer"></div>
     <section class="work-experience">
       <h2>Work Experience</h2>
       <div class="job">
@@ -68,7 +72,7 @@ export default {
 <style>
 
 header {
-  text-align: center;
+  height: 50px;
   margin-bottom: 20px;
 }
 
@@ -106,21 +110,36 @@ p {
   line-height: 21px;
 }
 
-.container {
-  width: 550px;
-  margin: 0 auto;
-  padding: 20px;
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .avatar {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+  margin-right: 20px;
 }
 
-.subtitle {
-  font-size: 1.2em;
-  color: #AAAAAA;
+.profile-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.profile-header-text .subtitle {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.container {
+  width: 550px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .link {
@@ -143,8 +162,6 @@ p {
   max-width: 100px;
 }
 
-
-
 .technologies {
   list-style-type: none;
   padding: 0;
@@ -159,4 +176,7 @@ p {
   border-radius: 5px;
 }
 
+.spacer {
+  padding-top: 50px;
+}
 </style>
