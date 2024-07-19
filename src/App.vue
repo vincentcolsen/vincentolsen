@@ -12,7 +12,7 @@
       </div>
       <section class="about">
         <h2 class="about">About</h2>
-        <p class="about">As an IT consultant at Netcompany, I work with modern technologies like Kubernetes, Terraform, Ansible, Python, among others. In my current project, I hold the position of security officer, responsible for securing systems, in addition to actively working with DevOps. My background in IT provides me with a solid foundation to tackle various challenges in my work.</p>
+        <p class="about">Hello, I'm Vincent. I enjoy building projects from start to finish, exploring every aspect of an application. From styling and creating the frontend, programming the backend, to setting up the platform and infrastructure. And of course, I think about security at every step. Some may call this DevSecOps.</p>
       </section>
       <div class="spacer"></div>
       <section class="work-experience">
@@ -23,7 +23,7 @@
           </div>
           <div class="project">
             <h2 class="job-title">IT Consultant – Netcompany </h2>
-            <p class="job-description">Outsourced to Oslo municipality as DevSecOps.</p>
+            <p class="job-description">Currently outsourced as a developer and serving as the security manager for the System Development section at Oslo municipality. Responsible for managing security work, including developing a management system for information security and privacy, and leading the Security Champions expert group. Focused on container orchestration with Kubernetes and OpenShift, leveraging a Certified Kubernetes Administrator (CKA) certification, and utilizing Azure for managing secrets. Additionally, working with Spring Boot and Vue for backend and frontend development.</p>
             <ul class="technologies">
               <li>Kubernetes</li>
               <li>•</li>
@@ -31,7 +31,14 @@
               <li>•</li>
               <li>Ansible</li>
               <li>•</li>
-              <li>Kafka</li>
+              <li>Spring Boot</li>
+              <li>•</li>
+              <li>Vue</li>
+              <li>•</li>
+              <li>Python</li>
+              <li>•</li>
+              <li>Java</li>
+              <li>...</li>
             </ul>
           </div>
         </div>
@@ -40,12 +47,18 @@
             <p>2021 - 2021</p>
           </div>
           <div class="project">
-            <h2 class="job-title">Summer Intern – Orkla</h2>
-            <p class="job-description">Big Data & Analytics. Worked on analyzing a lot of data through Gradient Boosting to see what drove the sale of Orkla Health and Care. We used serverless SQL in Azure to create a connection between all the data points, and python to transform the data.</p>
+            <h2 class="job-title">Summer Internship | Big Data & Analytics  – Orkla</h2>
+            <p class="job-description">In-house consultant focusing on machine learning, analytics, and data integration. Analyzed a large amount of data using Gradient Boosting to determine what drove the sales of Orkla Health and Care.</p>
             <ul class="technologies">
-              <li>Azure </li>
+              <li>Azure Synapse </li>
+              <li>•</li>
+              <li>Azure Databricks</li>
+              <li>•</li>
+              <li>Web-APIs</li>
               <li>•</li>
               <li>Python</li>
+              <li>•</li>
+              <li>PowerBI</li>
             </ul>
           </div>
         </div>
@@ -55,10 +68,46 @@
           </div>
           <div class="project">
             <h2 class="job-title">Service Consultant – Norwegian Information Security Forum</h2>
-            <p class="job-description">Preparation and hosting before / during member meetings four times a year, as well as a larger conference once a year. Otherwise various tasks for the board; involves contact with suppliers and participants, various administrative work, orders, design, member management, etc.</p>
+            <p class="job-description">Responsible for the preparation and hosting of member meetings held quarterly and an annual large-scale conference. Assisted the board with various tasks, including supplier and participant coordination, administrative work, order processing, design, and member management.</p>
+            <ul class="technologies">
+              <li>Adobe Illustrator</li>
+              <li>•</li>
+              <li>Squarespace</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="jobspan">
+            <p>2017 - 2018</p>
+          </div>
+          <div class="project">
+            <h2 class="job-title">
+              System Consultant – Norconsult</h2>
+            <p class="job-description">Collaborated with the HR department in rolling out the new Workday HR system across the organization. Actively involved in the implementation and integration of the system.</p>
           </div>
         </div>
       </section>
+        <h2>Links</h2>
+        <div class="links-container">
+          <div class="links-title">
+            <p>LinkedIn</p>
+          </div>
+          <div class="links-url">
+            <a href="https://www.linkedin.com/in/vincentolsen/">@vincentcolsen
+              <img class="arrow-svg" alt="link to linkedin @vincentcolsen" src="https://bonhomme.lol/arrow-link.svg">
+            </a>
+          </div>
+        </div>
+        <div class="links-container">
+          <div class="links-title">
+            <p>GitHub</p>
+          </div>
+          <div class="links-url">
+            <a href="https://github.com/vincentcolsen">@vincentcolsen
+              <img class="arrow-svg" alt="link to linkedin @vincentcolsen" src="https://bonhomme.lol/arrow-link.svg">
+            </a>
+          </div>
+        </div>
       <MainContent msg="Vincent sier; hello world"/>
     </div>
   </div>
@@ -102,7 +151,6 @@ h1 {
 h2 {
   font-size: 14px;
   line-height: 17px;
-  padding-bottom: 5px;
   font-weight: 400;
 }
 
@@ -121,6 +169,7 @@ p {
 
 .profile-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 50px;
 }
@@ -220,7 +269,40 @@ p {
   padding-top: 35px;
 }
 
-@media (max-width: 400px) {
+.links-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1920px;
+  grid-gap: 8px;
+  -webkit-padding-start: 0px;
+  padding-inline-start: 0px;
+  -webkit-padding-end: 0px;
+  padding-inline-end: 0px;
+  width: 100%;
+  -webkit-margin-start: auto;
+  margin-inline-start: auto;
+  -webkit-margin-end: auto;
+  margin-inline-end: auto;
+  margin-bottom: -1rem;
+  align-items: center;
+}
+
+.links-title {
+  grid-column: span 1 / span 1;
+
+}
+
+.links-url {
+  grid-column: span 3 / span 3;
+  transform: translateY(-2px);
+}
+
+.arrow-svg {
+  margin-left: 0.5rem;
+  transform: translateY(2px);
+}
+
+@media (max-width: 600px) {
   .job {
     display: block;
   }
