@@ -148,15 +148,21 @@ body {
 .background-dark {
   background-color: #121212;
   color: #FFFFFF;
+  min-height: 100vh;
 }
 
 /* Light mode styles */
 .background-light {
   background-color: #F5F5F5;
   color: #000000;
+  min-height: 100vh;
 }
 
 .background-light p {
+  color: #121212;
+}
+
+.background-light .links-url a {
   color: #121212;
 }
 
