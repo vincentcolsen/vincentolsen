@@ -1,6 +1,6 @@
 <template>
-  <div class="hiddendiv">
-    <p>Hello World</p>
+  <div class="hiddendiv" style="display: none;">
+    <p>To be done</p>
   </div>
 </template>
 
@@ -11,7 +11,5 @@ export default {
 </script>
 
 <style>
-.hiddendiv{
-  background-color: red;
-}
+
 </style>
