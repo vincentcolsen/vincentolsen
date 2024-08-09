@@ -115,7 +115,7 @@ body {
   font-family: Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212;
+  background-color: #c51515;
   color: #FFFFFF;
   margin: 0;
   padding: 0;
@@ -148,15 +148,21 @@ body {
 .background-dark {
   background-color: #121212;
   color: #FFFFFF;
+  min-height: 100vh;
 }
 
 /* Light mode styles */
 .background-light {
   background-color: #F5F5F5;
   color: #000000;
+  min-height: 100vh;
 }
 
 .background-light p {
+  color: #121212;
+}
+
+.background-light .links-url a {
   color: #121212;
 }
 
