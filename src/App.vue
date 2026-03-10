@@ -15,6 +15,7 @@
         <AboutMe :about="about"  />
         <div class="spacer"></div>
         <WorkExperience :jobs="jobs" />
+        <Certifications :certs="certifications" />
         <WebpageLinks :webpagelinks="webpagelinks" />
     </div>
     <FunMode/>
@@ -22,62 +23,98 @@
 </template>
 
 <script>
-import ProfileInfo from "@/components/ProfileInfo.vue";
 import AboutMe from "@/components/AboutMe.vue";
-import WorkExperience from "@/components/WorkExperience.vue";
-import WebpageLinks from "@/components/WebpageLinks.vue";
+import Certifications from "@/components/Certifications.vue";
 import FunMode from "@/components/FunMode.vue";
+import ProfileInfo from "@/components/ProfileInfo.vue";
+import WebpageLinks from "@/components/WebpageLinks.vue";
+import WorkExperience from "@/components/WorkExperience.vue";
 
 export default {
   name: 'App',
   components: {
-    ProfileInfo,
     AboutMe,
-    WorkExperience,
+    Certifications,
+    FunMode,
+    ProfileInfo,
     WebpageLinks,
-    FunMode
+    WorkExperience
   },
   data() {
     return {
       isToggled: false,
       profileinfo: {
-          imageSrc: require('@/assets/vinco_3000px.jpg'),
+          imageSrc: require('@/assets/vincent-olsen.jpg'),
           imageAlt: 'Bilde av Vincent Olsen',
           name: 'Vincent C. Olsen',
-          title: 'IT Developer',
+          title: 'Senior Platform Engineer',
       },
       about: {
         title: 'About',
-        description: 'Hello, I\'m Vincent. I enjoy building projects from start to finish, exploring every aspect of an application. From styling and creating the frontend, programming the backend, to setting up the platform and infrastructure. And of course, I think about security at every step. Some may call this DevSecOps.'
+        description: 'Hello, I\'m Vincent. I enjoy building projects from start to finish, exploring every aspect of an application. From creating the frontend, programming the backend, to setting up the platform and infrastructure. And of course, I think about security at every step. Some may call this DevSecOps.'
       },
       jobs: [
         {
           id: 0,
-          duration: '2022 - present',
-          title: 'IT Consultant – Netcompany',
-          description: 'Currently outsourced as a developer and serving as the security manager for the System Development section at Oslo municipality. Responsible for managing security work, including developing a management system for information security and privacy, and leading the Security Champions expert group. Focused on container orchestration with Kubernetes and OpenShift, leveraging a Certified Kubernetes Administrator (CKA) certification, and utilizing Azure for managing secrets. Additionally, working with Spring Boot and Vue for backend and frontend development.',
-          technologies: ['Kubernetes', 'Terraform', 'Ansible', 'Spring Boot', 'Vue', 'Python', 'Java', '...']
+          duration: '2026 - present',
+          title: 'Senior Platform Engineer – Nimtech',
+          description: 'Working with cloud platforms, Kubernetes environments and DevSecOps practices across client projects. Focus on building scalable and secure platform solutions using Kubernetes, Azure and modern CI/CD pipelines.',
+          technologies: ['Kubernetes', 'Azure', 'DevSecOps', 'Terraform', 'GitHub Actions']
         },
         {
           id: 1,
+          duration: '2022 - 2026',
+          title: 'Senior Consultant – Netcompany',
+          description: 'Platform engineer in Oslo municipality working on the OpenShift platform Marvin. Responsible for operations, development and observability for a platform hosting around 240 applications. Implemented CI/CD pipelines with GitHub Actions, Terraform and ArgoCD and built monitoring solutions using Prometheus, Grafana and Elastic Stack.',
+          technologies: ['Kubernetes', 'Terraform', 'Ansible', 'Spring Boot', 'Vue', 'Python', 'Java', '...']
+        },
+        {
+          id: 2,
           duration: '2021 - 2021',
           title: 'Summer Internship | Big Data & Analytics – Orkla',
           description: 'In-house consultant focusing on machine learning, analytics, and data integration. Analyzed a large amount of data using Gradient Boosting to determine what drove the sales of Orkla Health and Care.',
           technologies: ['Azure Synapse', 'Azure Databricks', 'Web-APIs', 'Python', 'PowerBI']
         },
         {
-          id: 2,
+          id: 3,
           duration: '2018 - 2022',
           title: 'Service Consultant – Norwegian Information Security Forum',
           description: 'Responsible for the preparation and hosting of member meetings held quarterly and an annual large-scale conference. Assisted the board with various tasks, including supplier and participant coordination, administrative work, order processing, design, and member management.',
           technologies: ['Adobe Illustrator', 'Squarespace']
         },
         {
-          id: 3,
+          id: 4,
           duration: '2017 - 2018',
           title: 'System Consultant – Norconsult',
           description: 'Collaborated with the HR department in rolling out the new Workday HR system across the organization. Actively involved in the implementation and integration of the system.',
           technologies: []
+        }
+      ],
+      certifications: [
+        {
+          id: 0,
+          short: "CKA",
+          name: "Certified Kubernetes Administrator"
+        },
+        {
+          id: 1,
+          short: "CKS",
+          name: "Certified Kubernetes Security Specialist"
+        },
+        {
+          id: 2,
+          short: "CKAD",
+          name: "Certified Kubernetes Application Developer"
+        },
+        {
+          id: 3,
+          short: "KCSA",
+          name: "Kubernetes and Cloud Native Security Associate"
+        },
+        {
+          id: 4,
+          short: "KCNA",
+          name: "Kubernetes and Cloud Native Associate"
         }
       ],
       webpagelinks: [
@@ -90,8 +127,8 @@ export default {
         {
           id: 1,
           title: 'GitHub',
-          link: 'https://github.com/vincentcolsen/',
-          linktext: '@vincentcolsen'
+          link: 'https://github.com/vincent-olsen/',
+          linktext: '@vincent-olsen'
         }
       ]
     };
