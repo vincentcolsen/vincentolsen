@@ -29,6 +29,7 @@ import FunMode from "@/components/FunMode.vue";
 import ProfileInfo from "@/components/ProfileInfo.vue";
 import WebpageLinks from "@/components/WebpageLinks.vue";
 import WorkExperience from "@/components/WorkExperience.vue";
+import vincentOlsenImage from "@/assets/vincent-olsen.jpg";
 
 export default {
   name: 'App',
@@ -44,7 +45,7 @@ export default {
     return {
       isToggled: false,
       profileinfo: {
-          imageSrc: require('@/assets/vincent-olsen.jpg'),
+          imageSrc: vincentOlsenImage,
           imageAlt: 'Bilde av Vincent Olsen',
           name: 'Vincent C. Olsen',
           title: 'Senior Platform Engineer',
