@@ -1,67 +1,66 @@
 <template>
-  <h2>Links</h2>
-  <div v-for="webpagelink in webpagelinks" :key="webpagelink.id" class="links-container">
-    <div class="links-title">
-      <p>{{ webpagelink.title }}</p>
-    </div>
-    <div class="links-url">
-      <a :href="webpagelink.link">{{ webpagelink.linktext}}
-        <img class="arrow-svg" src="https://bonhomme.lol/arrow-link.svg">
-      </a>
-    </div>
-  </div>
+  <section>
+    <h2>Links</h2>
+    <dl class="link-list">
+      <div v-for="link in links" :key="link.label" class="link">
+        <dt>{{ link.label }}</dt>
+        <dd>
+          <a :href="link.href">
+            {{ link.text }}
+            <ArrowLinkIcon class="link-icon" />
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </section>
 </template>
 
-<script>
-export default {
-  name: 'WebpageLinks',
-  props: {
-    webpagelinks: {
-      type: Array,
-      required: true
-    }
-  }
-};
+<script setup>
+import ArrowLinkIcon from '@/components/ArrowLinkIcon.vue'
+
+defineProps({
+  links: {
+    type: Array,
+    required: true,
+  },
+})
 </script>
 
 <style scoped>
-.links-container {
+.link-list {
+  display: grid;
+  row-gap: 12px;
+  margin: 26px 0 0;
+}
+
+.link {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 1920px;
-  -webkit-padding-start: 0px;
-  padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
-  padding-inline-end: 0px;
-  width: 100%;
-  -webkit-margin-start: auto;
-  margin-inline-start: auto;
-  -webkit-margin-end: auto;
-  margin-inline-end: auto;
-  margin-bottom: -1rem;
-  align-items: center;
+  align-items: baseline;
 }
 
-.links-title {
-  flex: 1;
+.link dt {
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-text);
 }
 
-.links-url {
-  grid-column: span 3 / span 3;
-  transform: translateY(-2px);
+.link dd {
+  grid-column: span 3;
+  margin: 0;
 }
 
-.links-url a {
-  color: rgba(255, 255, 255);
+.link a {
+  color: var(--color-link);
   text-decoration: none;
 }
 
-.links-url a:hover {
-  text-decoration: underline; /* Add underline on hover */
+.link a:hover {
+  text-decoration: underline;
 }
 
-.arrow-svg {
+.link-icon {
   margin-left: 0.5rem;
-  transform: translateY(2px);
+  vertical-align: -2px;
 }
 </style>

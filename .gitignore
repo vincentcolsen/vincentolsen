@@ -3,6 +3,7 @@
 # Node.js dependencies
 /node_modules
 /dist
+/dist-ssr
 /temp
 
 # Log files
