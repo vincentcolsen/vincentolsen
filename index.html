@@ -1,19 +1,51 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Vincent C. Olsen – Senior Platform Engineer</title>
+    <meta name="description" content="Vincent C. Olsen, Senior Platform Engineer at Nimtech. Kubernetes, Azure and DevSecOps. Kubestronaut with all five CNCF Kubernetes certifications.">
+    <link rel="canonical" href="https://vincentolsen.no/">
     <link rel="icon" type="image/png" sizes="32x32" href="/vincentolsen_32px.png">
-    <title>Vincent Olsen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://vincentolsen.no/">
+    <meta property="og:title" content="Vincent C. Olsen – Senior Platform Engineer">
+    <meta property="og:description" content="Senior Platform Engineer at Nimtech. Kubernetes, Azure and DevSecOps. Kubestronaut with all five CNCF Kubernetes certifications.">
+    <meta property="og:image" content="https://vincentolsen.no/og-image.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt" content="Photo of Vincent C. Olsen">
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vincent C. Olsen",
+        "jobTitle": "Senior Platform Engineer",
+        "worksFor": { "@type": "Organization", "name": "Nimtech" },
+        "url": "https://vincentolsen.no/",
+        "image": "https://vincentolsen.no/og-image.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/vincentolsen/",
+          "https://github.com/vincent-olsen",
+          "https://www.credly.com/users/vincent-olsen"
+        ]
+      }
+    </script>
+
+    <script>
+      // Applies a saved theme choice before first paint. ThemeToggle.vue writes the same key.
+      try {
+        const theme = localStorage.getItem('theme')
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme
+      } catch {}
+    </script>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

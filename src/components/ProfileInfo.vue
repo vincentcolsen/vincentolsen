@@ -1,25 +1,26 @@
 <template>
   <div class="profile-header">
-    <img :src="profileInfo.imageSrc" :alt="profileInfo.imageAlt" class="avatar">
+    <img
+      :src="profile.avatar"
+      :alt="profile.avatarAlt"
+      class="avatar"
+      width="100"
+      height="100"
+    >
     <div class="profile-header-text">
-      <h1>{{ profileInfo.name }}</h1>
-      <p class="subtitle">{{ profileInfo.title }}</p>
+      <h1>{{ profile.name }}</h1>
+      <p class="subtitle">{{ profile.title }}</p>
     </div>
   </div>
 </template>
 
-<script>
-
-export default {
-  name: 'ProfileInfo',
-  props: {
-    profileInfo: {
-      type: Object,
-      required: true
-    }
-  }
-};
-
+<script setup>
+defineProps({
+  profile: {
+    type: Object,
+    required: true,
+  },
+})
 </script>
 
 <style scoped>

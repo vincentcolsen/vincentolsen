@@ -1,16 +1,14 @@
 <template>
   <section class="work-experience">
     <h2>Work Experience</h2>
-    <div v-for="job in jobs" :key="job.id" class="job">
-      <div class="jobspan">
-        <p>{{ job.duration }}</p>
-      </div>
-      <div class="project">
-        <h2 class="job-title">{{ job.title }}</h2>
-        <p class="job-description">{{ job.description }}</p>
-        <ul class="technologies">
-          <li v-for="(tech, index) in job.technologies" :key="index">
-            {{ tech }}<span v-if="index < job.technologies.length - 1"> • </span>
+    <div v-for="job in jobs" :key="job.title" class="job">
+      <p>{{ job.period }}</p>
+      <div class="job-details">
+        <h3>{{ job.title }}</h3>
+        <p>{{ job.description }}</p>
+        <ul v-if="job.technologies.length" class="technologies">
+          <li v-for="(tech, index) in job.technologies" :key="tech">
+            {{ tech }}<span v-if="index < job.technologies.length - 1" aria-hidden="true"> • </span>
           </li>
         </ul>
       </div>
@@ -18,16 +16,13 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'WorkExperience',
-  props: {
-    jobs: {
-      type: Array,
-      required: true
-    }
-  }
-};
+<script setup>
+defineProps({
+  jobs: {
+    type: Array,
+    required: true,
+  },
+})
 </script>
 
 <style scoped>
@@ -38,50 +33,30 @@ export default {
 .job {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 1920px;
-  padding-inline-start: 0px;
-  padding-inline-end: 0px;
-  width: 100%;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
   margin-bottom: 2.5rem;
 }
 
-.jobspan {
-  flex: 1;
-
-}
-
-.project {
-  grid-column: span 3 / span 3;
+.job-details {
+  grid-column: span 3;
 }
 
 .technologies {
-  list-style-type: none;
-  padding: 0;
   display: flex;
-  gap: 5px;
   flex-wrap: wrap;
+  gap: 5px;
+  padding: 0;
+  list-style: none;
 }
 
 .technologies li {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-  font-style: normal;
   font-size: 15px;
-  font-weight: lighter;
+  font-weight: 300;
   line-height: 21px;
 }
 
 @media (max-width: 600px) {
   .job {
     display: block;
-  }
-
-  .jobspan, .project {
-    max-width: none;
-    width: 100%;
   }
 }
 </style>
